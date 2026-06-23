@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HATD Studio • Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dropdown.css">
+  <link rel="stylesheet" href="assets/css/services.css">
+  <link rel="icon" type="image/png" href="assets/image/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="assets/image/favicon/favicon.svg">
+  <link rel="shortcut icon" href="assets/image/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/image/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/image/favicon/site.webmanifest">
+  <link rel="stylesheet" href="assets/css/global-fontsize.css">
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/image/TDHA-Company.png" alt="HATD Studio">
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="dropdown">
+          <a href="services.html" class="active">Services ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="services/residential.html">Residential Project</a></li>
+            <li><a href="services/commercial.html">Commercial & Shop Fit Out</a></li>
+            <li><a href="services/extensions.html">Extensions & Renovations</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">Post</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button class="header-translate-btn" id="translateBtn" onclick="toggleTranslate()">
+            <i class="fas fa-globe"></i> Tiếng Việt
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-content">
+      <div class="section-title">
+        <h2>Services</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-item" id="residential">
+          <div class="service-img">
+            <img src="assets/image/Residental/GenerateImages2.png" alt="Residential">
+            <div class="service-hover">
+              <h3>Residential Project</h3>
+              <p>Custom homes, villas, and premium apartments with optimized functionality and aesthetics.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item" id="commercial">
+          <div class="service-img">
+            <img src="assets/image/Bathroom/GenerateImages1.png" alt="Commercial">
+            <div class="service-hover">
+              <h3>Commercial & Shop Fit Out</h3>
+              <p>Professional office, showroom, retail, and restaurant design that attracts customers.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item" id="extensions">
+          <div class="service-img">
+            <img src="assets/image/Kitchen.png" alt="Extensions">
+            <div class="service-hover">
+              <h3>Extensions & Renovations</h3>
+              <p>Renovate, upgrade, and expand your living space with a fresh new look.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-provided">
+        <div class="section-title-small">
+          <h3>Our Process</h3>
+          <div class="divider-small"></div>
+        </div>
+
+        <div class="detail-block">
+          <div class="detail-marker">01</div>
+          <div class="detail-content">
+            <h4>DESIGN CONSULTANCE</h4>
+            <p>We work closely with you to understand your lifestyle, needs, and aspirations. Through site analysis, concept sketching, and 3D modeling, we translate your ideas into architectural form. Our consultative approach ensures every design decision is intentional — balancing aesthetics, functionality, and budget from the very first meeting.</p>
+          </div>
+        </div>
+
+        <div class="detail-block">
+          <div class="detail-marker">02</div>
+          <div class="detail-content">
+            <h4>TOWN PLANNING PERMIT</h4>
+            <p>We navigate the complexities of local planning schemes on your behalf. Our team prepares and submits all required documentation — including design responses, shadow diagrams, and landscape plans — then liaises with council officers to secure your permit. We're committed to achieving approval without compromising your design vision.</p>
+          </div>
+        </div>
+
+        <div class="detail-block">
+          <div class="detail-marker">03</div>
+          <div class="detail-content">
+            <h4>BUILDING PERMIT</h4>
+            <p>Once town planning is approved, we develop fully coordinated construction drawings that meet NCC and Australian Standards. Our documentation is precise and buildable, covering structural, hydraulic, energy, and fire protection requirements — giving you a clear path to a compliant building permit.</p>
+          </div>
+        </div>
+
+        <div class="detail-block">
+          <div class="detail-marker">04</div>
+          <div class="detail-content">
+            <h4>COORDINATION</h4>
+            <p>We act as the central point of contact, managing communication between structural engineers, civil consultants, energy assessors, and other specialists. By resolving technical interfaces early, we prevent costly on-site surprises and keep your project moving forward efficiently.</p>
+          </div>
+        </div>
+
+        <div class="detail-block">
+          <div class="detail-marker">05</div>
+          <div class="detail-content">
+            <h4>CONSTRUCTION SUPPORT</h4>
+            <p>Your project doesn't stop at documentation. We remain involved throughout construction — conducting regular site inspections, responding to RFIs, reviewing shop drawings, and ensuring the built outcome matches the approved design. Our independent oversight protects your investment and ensures quality execution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 HATD Studio. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/services.js"></script>
+</body>
+</html>
