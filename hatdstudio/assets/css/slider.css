@@ -1,0 +1,395 @@
+/* ===== HERO SLIDER ===== */
+.hero-slider {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  margin-top: 0;
+  touch-action: pan-y;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 3;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.slide-content h1 {
+  font-size: 3.8rem;
+  font-weight: 300;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.slide-content p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.slide-content .btn-slide {
+  display: inline-block;
+  padding: 14px 42px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.slide-content .btn-slide:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.quote-line {
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  color: #e0e0e0;
+}
+
+.sub-quote {
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  color: #c0c0c0;
+  margin-bottom: 32px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 20;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #c6a43b;
+  width: 30px;
+  border-radius: 6px;
+}
+
+.typing-wrapper {
+  display: inline-block;
+  min-width: 280px;
+  text-align: center;
+}
+
+.typing-text {
+  border-right: 2px solid #c6a43b;
+  display: inline-block;
+  text-align: center;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-arrow:hover {
+  background: #c6a43b;
+  border-color: #c6a43b;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.slider-arrow-prev {
+  left: 24px;
+}
+
+.slider-arrow-next {
+  right: 24px;
+}
+
+.slider-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: #c6a43b;
+  z-index: 20;
+  transition: width 0.1s linear;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 992px) {
+  .hero-slider {
+    min-height: 550px;
+  }
+  
+  .slide-content h1 {
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+  }
+  
+  .slide-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slider {
+    min-height: 480px;
+    height: 75vh;
+  }
+  
+  .slide {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .slide-overlay {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .slide-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 20px;
+    width: 100%;
+  }
+  
+  .slide-content h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  
+  .slide-content p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  
+  .slide-content .btn-slide {
+    padding: 10px 28px;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .slider-dots {
+    bottom: 15px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
+  
+  .dot.active {
+    width: 22px;
+  }
+  
+  .slider-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+  }
+  
+  .slider-arrow-prev {
+    left: 12px;
+  }
+  
+  .slider-arrow-next {
+    right: 12px;
+  }
+  
+  .typing-wrapper {
+    min-width: 180px;
+  }
+  
+  .quote-line {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  
+  .sub-quote {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slider {
+    min-height: 380px;
+    height: 70vh;
+  }
+  
+  .slide {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .slide-overlay {
+    background: rgba(0, 0, 0, 0.65);
+  }
+  
+  .slide-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 14px;
+  }
+  
+  .slide-content h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+  
+  .slide-content p {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+    letter-spacing: 0.3px;
+  }
+  
+  .slide-content .btn-slide {
+    padding: 8px 22px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+  
+  .slider-dots {
+    bottom: 12px;
+  }
+  
+  .dot {
+    width: 6px;
+    height: 6px;
+    margin: 0 3px;
+  }
+  
+  .dot.active {
+    width: 18px;
+  }
+  
+  .slider-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+  
+  .slider-arrow-prev {
+    left: 8px;
+  }
+  
+  .slider-arrow-next {
+    right: 8px;
+  }
+  
+  .typing-wrapper {
+    min-width: 140px;
+  }
+  
+  .quote-line {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  
+  .sub-quote {
+    font-size: 0.65rem;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+}
