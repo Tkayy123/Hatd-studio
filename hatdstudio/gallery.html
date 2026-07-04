@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HATd Studio • Gallery</title>
+  <meta name="description" content="Browse HATd Studio's portfolio of residential, commercial, and renovation projects — architecture and interior design across Australia.">
+  <link rel="canonical" href="https://www.hatdstudio.com.au/gallery">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HATd Studio • Gallery">
+  <meta property="og:description" content="Browse HATd Studio's portfolio of residential, commercial, and renovation projects — architecture and interior design across Australia.">
+  <meta property="og:image" content="https://www.hatdstudio.com.au/assets/image/Logo.png">
+  <meta property="og:url" content="https://www.hatdstudio.com.au/gallery">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/gallery.css">
+  <link rel="icon" type="image/png" href="assets/image/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="assets/image/favicon/favicon.svg">
+  <link rel="shortcut icon" href="assets/image/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/image/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/image/favicon/site.webmanifest">
+  <link rel="stylesheet" href="assets/css/global-fontsize.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.hatdstudio.com.au/"},
+      {"@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://www.hatdstudio.com.au/gallery"}
+    ]
+  }
+  </script>
+
+  <style>
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .container.page-content { max-width: 100%; padding: 0; }
+
+    /* ── CAT LABEL (chỉ số + tên, tối giản) ── */
+    .cat-section {
+      max-width: 1440px;
+      margin: 0 auto 72px;
+      padding: 0 40px;
+    }
+    .cat-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .cat-label-num {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #c6a43b;
+      text-transform: uppercase;
+    }
+    .cat-label-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: #1a1a1a;
+      text-transform: uppercase;
+    }
+    .cat-label-line {
+      flex: 1; height: 1px; background: #e0ddd5;
+    }
+
+    /* ── SUB-LABEL ── */
+    .sub-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 28px 0 14px;
+    }
+    .sub-label:first-of-type { margin-top: 0; }
+    .sub-name {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #bbb;
+    }
+    .sub-name::after {
+      content: '';
+      display: inline-block;
+      width: 60px;
+      height: 1px;
+      background: #e0ddd5;
+      vertical-align: middle;
+      margin-left: 14px;
+    }
+
+    /* ── MASONRY-STYLE GRID ── */
+    .photo-grid {
+      display: grid;
+      gap: 10px;
+    }
+    .g3 { grid-template-columns: repeat(3, 1fr); }
+    .g4 { grid-template-columns: repeat(3, 1fr); }
+    .g2 { grid-template-columns: repeat(2, 1fr); }
+
+    .pc {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #ece9e2;
+    }
+    .pc img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.5s cubic-bezier(0.2,0.9,0.4,1.1);
+    }
+    .pc:hover img { transform: scale(1.05); }
+
+    /* aspect ratios */
+    .r43  { aspect-ratio: 3/2; }
+    .r11  { aspect-ratio: 1/1; }
+    .r34  { aspect-ratio: 3/4; }
+    .r169 { aspect-ratio: 16/9; }
+    .r167 { aspect-ratio: 16/6; }
+
+    /* span */
+    .s2 { grid-column: span 2; }
+    .s3 { grid-column: span 3; }
+
+    /* floor plan clickable */
+    .pc.fp { cursor: zoom-in; }
+
+    /* ── BENTO GRID ── */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 80px;
+      gap: 10px;
+      grid-auto-flow: dense;
+      margin-bottom: 0;
+    }
+    .bc {
+      overflow: hidden;
+      border-radius: 8px;
+      background: #ece9e2;
+    }
+    .bc img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.5s cubic-bezier(0.2,0.9,0.4,1.1);
+    }
+    .bc:hover img { transform: scale(1.05); }
+    .bc.fp { cursor: zoom-in; }
+    .col2 { grid-column: span 2; }
+    .col3 { grid-column: span 3; }
+    .row2 { grid-row: span 2; }
+    .row3 { grid-row: span 3; }
+    .row4 { grid-row: span 4; }
+    .row5 { grid-row: span 5; }
+    .row6 { grid-row: span 6; }
+
+    @media (max-width: 992px) {
+      .bento-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 90px; }
+      .col2 { grid-column: span 2; }
+      .col3 { grid-column: span 2; }
+    }
+    @media (max-width: 480px) {
+      .bento-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 70px; gap: 7px; }
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      max-width: 1440px;
+      margin: 0 auto 72px;
+      padding: 0 40px;
+    }
+    .divider hr { border: none; border-top: 1px solid #e8e4dc; }
+
+    /* ── CTA ── */
+    .gallery-cta {
+      text-align: center;
+      padding: 80px 32px 100px;
+      background: #1a1a1a;
+    }
+    .gallery-cta h2 {
+      font-size: 1.8rem; font-weight: 300; letter-spacing: 6px;
+      text-transform: uppercase; margin-bottom: 14px; color: #fff;
+    }
+    .gallery-cta p { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-bottom: 32px; }
+    .gallery-cta a {
+      display: inline-block; color: #fff;
+      padding: 14px 48px; text-decoration: none; font-size: 0.75rem;
+      letter-spacing: 3px; text-transform: uppercase; font-weight: 500;
+      border-radius: 40px; border: 1.5px solid rgba(255,255,255,0.35);
+      transition: all 0.3s;
+    }
+    .gallery-cta a:hover {
+      background: #c6a43b; border-color: #c6a43b;
+      transform: translateY(-2px); box-shadow: 0 10px 28px rgba(198,164,59,0.3);
+    }
+
+    /* ── FLOOR PLAN POPUP ── */
+    .fp-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.93);
+      backdrop-filter: blur(20px);
+      z-index: 10000;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden;
+      transition: all 0.35s;
+      padding: 40px;
+    }
+    .fp-overlay.on { opacity: 1; visibility: visible; }
+    .fp-overlay img {
+      max-width: 90%; max-height: 88vh; object-fit: contain; border-radius: 8px;
+      transform: scale(0.9); transition: transform 0.4s cubic-bezier(0.2,0.9,0.4,1.1);
+    }
+    .fp-overlay.on img { transform: scale(1); }
+    .fp-close {
+      position: fixed; top: 26px; right: 26px;
+      width: 46px; height: 46px;
+      background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2);
+      border-radius: 50%; color: #fff; font-size: 1.2rem; cursor: pointer;
+      z-index: 10001; display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s;
+    }
+    .fp-close:hover { background: #c6a43b; border-color: #c6a43b; transform: rotate(90deg); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 992px) {
+      .g3, .g4 { grid-template-columns: repeat(2, 1fr); }
+      .s2, .s3 { grid-column: span 1; }
+      .r167 { aspect-ratio: 4/3; }
+      /* bento grids → 2 col on tablet */
+      .photo-grid[style*="repeat(4"] { grid-template-columns: repeat(2,1fr) !important; }
+      .photo-grid[style*="repeat(4"] .s2 { grid-column: span 2; }
+    }
+    @media (max-width: 768px) {
+      .cat-section { padding: 0 16px; margin-bottom: 52px; }
+      .divider { padding: 0 16px; margin-bottom: 52px; }
+      .g3, .g4, .g2 { grid-template-columns: repeat(2, 1fr); }
+      .s2, .s3 { grid-column: span 1; }
+      .gallery-hero-content { grid-template-columns: 1fr; gap: 20px; padding: 0 16px; text-align: center; }
+      .gallery-hero-content h1 { font-size: 2.5rem; }
+      /* bento grids → 2 col on mobile */
+      .photo-grid[style*="repeat(4"] { grid-template-columns: repeat(2,1fr) !important; }
+      .photo-grid[style*="repeat(4"] .s2 { grid-column: span 2; }
+    }
+    @media (max-width: 480px) {
+      .cat-section { padding: 0 10px; }
+      .photo-grid { gap: 7px; }
+      .gallery-cta h2 { font-size: 1.3rem; }
+      /* bento → single col on small phones */
+      .photo-grid[style*="repeat(4"] { grid-template-columns: 1fr !important; }
+      .photo-grid[style*="repeat(4"] .s2 { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/image/Logo-transparent.png" alt="HATd Studio">
+      </a>
+      <button class="header-translate-btn" id="translateBtn" onclick="toggleTranslate()">
+        <i class="fas fa-globe"></i> Tiếng Việt
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li class="dropdown">
+          <a href="services.html">Services ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="services/residential.html">Residential Project</a></li>
+            <li><a href="services/commercial.html">Commercial Project Design & Fit-Out</a></li>
+            <li><a href="services/extensions.html">Extensions & Renovations</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">Post</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-content">
+
+      <section class="gallery-hero">
+        <div class="gallery-hero-content">
+          <h1>OUR<br>PROJECTS</h1>
+          <div class="hero-right">
+            <p class="hero-desc">A curated look at our residential and commercial design work — each space crafted with purpose and care.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════
+           01 · RESIDENTIAL
+      ══════════════════════════════ -->
+      <section class="cat-section" style="margin-top:64px;">
+        <div class="cat-label">
+          <span class="cat-label-num">01</span>
+          <span class="cat-label-name">Residential</span>
+          <span class="cat-label-line"></span>
+        </div>
+
+        <!-- Exterior -->
+        <div class="sub-label">
+          <span class="sub-name">Exterior</span>
+        </div>
+        <div class="bento-grid">
+          <!-- facade 1: landscape 2.07:1 → col-span2, row-span3 -->
+          <div class="bc col2 row3 fp" onclick="openFP('assets/image/facade 1.webp')">
+            <img loading="lazy" src="assets/image/facade 1.webp" alt="">
+          </div>
+          <!-- facade 2: landscape 1.73:1 → col1, row3 -->
+          <div class="bc row3 fp" onclick="openFP('assets/image/facade 2.webp')">
+            <img loading="lazy" src="assets/image/facade 2.webp" alt="">
+          </div>
+          <!-- Development: landscape 2.05:1 → col1, row3 -->
+          <div class="bc row3 fp" onclick="openFP('assets/image/Development.png')">
+            <img loading="lazy" src="assets/image/Development.png" alt="">
+          </div>
+        </div>
+
+        <!-- Interior -->
+        <div class="sub-label" style="margin-top:32px;">
+          <span class="sub-name">Interior</span>
+        </div>
+        <div class="bento-grid">
+          <!-- living room: portrait 0.80 → col1, row5 -->
+          <div class="bc row5 fp" onclick="openFP('assets/image/Residental/living room.webp')">
+            <img loading="lazy" src="assets/image/Residental/living room.webp" alt="">
+          </div>
+          <!-- Bedroom: portrait 0.72 → col1, row5 -->
+          <div class="bc row5 fp" onclick="openFP('assets/image/Residental/Bedroom.webp')">
+            <img loading="lazy" src="assets/image/Residental/Bedroom.webp" alt="">
+          </div>
+          <!-- Alfresco: landscape 1.27 → col2, row4 -->
+          <div class="bc col2 row4 fp" onclick="openFP('assets/image/Alfresco.webp')">
+            <img loading="lazy" src="assets/image/Alfresco.webp" alt="">
+          </div>
+          <!-- kitchen 2: landscape 1.25 → col2, row4 -->
+          <div class="bc col2 row4 fp" onclick="openFP('assets/image/Residental/kitchen 2.webp')">
+            <img loading="lazy" src="assets/image/Residental/kitchen 2.webp" alt="">
+          </div>
+          <!-- living room 2: square 1.00 → col1, row3 -->
+          <div class="bc row3 fp" onclick="openFP('assets/image/living room ideas 2.webp')">
+            <img loading="lazy" src="assets/image/living room ideas 2.webp" alt="">
+          </div>
+          <!-- powder 1: portrait 0.67 → col1, row5 -->
+          <div class="bc row5 fp" onclick="openFP('assets/image/powder 1.png')">
+            <img loading="lazy" src="assets/image/powder 1.png" alt="">
+          </div>
+          <!-- powder 2: portrait 0.67 → col1, row5 -->
+          <div class="bc row5 fp" onclick="openFP('assets/image/powder 2.png')">
+            <img loading="lazy" src="assets/image/powder 2.png" alt="">
+          </div>
+          <!-- powder room 3: portrait 0.67 → col1, row5 -->
+          <div class="bc row5 fp" onclick="openFP('assets/image/powder room 3.png')">
+            <img loading="lazy" src="assets/image/powder room 3.png" alt="">
+          </div>
+          <!-- shoes nook: portrait 0.67 → col1, row5 -->
+          <div class="bc row5 fp" onclick="openFP('assets/image/shoes nook.png')">
+            <img loading="lazy" src="assets/image/shoes nook.png" alt="">
+          </div>
+          <!-- Office nook: landscape 1.73 → col1, row3 -->
+          <div class="bc row3 fp" onclick="openFP('assets/image/Office nook.webp')">
+            <img loading="lazy" src="assets/image/Office nook.webp" alt="">
+          </div>
+          <!-- GenerateImages2: landscape 1.83 → col2, row3 -->
+          <div class="bc col2 row3 fp" onclick="openFP('assets/image/Residental/GenerateImages2.webp')">
+            <img loading="lazy" src="assets/image/Residental/GenerateImages2.webp" alt="">
+          </div>
+        </div>
+
+      </section>
+
+      <div class="divider"><hr></div>
+
+      <!-- ══════════════════════════════
+           02 · COMMERCIAL
+      ══════════════════════════════ -->
+      <section class="cat-section">
+        <div class="cat-label">
+          <span class="cat-label-num">02</span>
+          <span class="cat-label-name">Commercial</span>
+          <span class="cat-label-line"></span>
+        </div>
+
+        <div class="sub-label">
+          <span class="sub-name">Shop Fit Out</span>
+        </div>
+        <div class="bento-grid">
+          <!-- Chicken shop: landscape 1.83 → col2, row3 -->
+          <div class="bc col2 row3 fp" onclick="openFP('assets/image/Chicken shop.webp')">
+            <img loading="lazy" src="assets/image/Chicken shop.webp" alt="">
+          </div>
+          <!-- convenient store: landscape 1.73 → col1, row3 -->
+          <div class="bc row3 fp" onclick="openFP('assets/image/convenient store.webp')">
+            <img loading="lazy" src="assets/image/convenient store.webp" alt="">
+          </div>
+        </div>
+
+      </section>
+      <div class="divider"><hr></div>
+
+      <!-- ══════════════════════════════
+           03 · FLOOR PLANS
+      ══════════════════════════════ -->
+      <section class="cat-section">
+        <div class="cat-label">
+          <span class="cat-label-num">03</span>
+          <span class="cat-label-name">Floor Plans</span>
+          <span class="cat-label-line"></span>
+        </div>
+
+        <div class="photo-grid g4">
+          <div class="pc r43 fp" onclick="openFP('assets/image/Harmac_Freemont_01.webp')">
+            <img loading="lazy" src="assets/image/Harmac_Freemont_01.webp" alt="">
+          </div>
+          <div class="pc r43 fp" onclick="openFP('assets/image/Freemont RH_01.webp')">
+            <img loading="lazy" src="assets/image/Freemont RH_01.webp" alt="">
+          </div>
+          <div class="pc r43 fp" onclick="openFP('assets/image/GDC - WD_E Hannah_s House_06.webp')">
+            <img loading="lazy" src="assets/image/GDC - WD_E Hannah_s House_06.webp" alt="">
+          </div>
+          <div class="pc r43 fp" onclick="openFP('assets/image/GDC - WD_G Arwen_s House_02.webp')">
+            <img loading="lazy" src="assets/image/GDC - WD_G Arwen_s House_02.webp" alt="">
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- CTA -->
+      <section class="gallery-cta">
+        <h2>Start your project</h2>
+        <p>Tell us your vision — we'll bring it to life.</p>
+        <a href="contact.html">Get in touch →</a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Floor Plan Popup -->
+  <div class="fp-overlay" id="fpOverlay" onclick="closeFP()">
+    <button class="fp-close" onclick="event.stopPropagation();closeFP()">
+      <i class="fas fa-times"></i>
+    </button>
+    <img id="fpImg" src="" alt="">
+  </div>
+
+  <footer>
+    <div class="container footer-main">
+      <div class="footer-col footer-brand">
+        <img src="assets/image/White-text-logo-transparent.png" alt="HATd Studio" class="footer-logo">
+        <p class="footer-tagline">Thoughtful architecture and interior design for homes and businesses across Melbourne. Balancing bold concepts with timeless craftsmanship.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul class="footer-contact footer-social-list">
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=61591285115607" target="_blank" rel="noopener noreferrer" class="footer-fb-highlight">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="footer-fb-highlight">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 HATd Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="assets/js/translate.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    function openFP(src) {
+      document.getElementById('fpImg').src = src;
+      document.getElementById('fpOverlay').classList.add('on');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeFP() {
+      document.getElementById('fpOverlay').classList.remove('on');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFP(); });
+  </script>
+</body>
+</html>
