@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Không cho Google Images thu thập/hiển thị ảnh logo và bản vẽ mặt bằng (floor plans)
+User-agent: Googlebot-Image
+Disallow: /assets/image/*Logo*
+Disallow: /assets/image/*logo*
+Disallow: /assets/image/*Harmac*
+Disallow: /assets/image/*Freemont*
+Disallow: /assets/image/*Hannah*
+Disallow: /assets/image/*Arwen*
+
+Sitemap: https://www.hatdstudio.com.au/sitemap.xml
