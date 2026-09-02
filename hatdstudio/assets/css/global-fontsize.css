@@ -1,0 +1,56 @@
+/* ===== GLOBAL FONT SIZE INCREASE ===== */
+html { font-size: 17px; }
+
+body {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* Nav */
+.nav-menu li a { font-size: 0.88rem; }
+
+/* Headings */
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.15rem; }
+h5 { font-size: 1rem; }
+
+/* Body text / paragraphs */
+p { font-size: 1rem; }
+
+/* Blog specific */
+.blog-post-content h3 { font-size: 1.25rem; }
+.post-excerpt { font-size: 0.97rem; }
+.post-tag { font-size: 0.7rem; }
+.post-date { font-size: 0.82rem; }
+.post-category { font-size: 0.78rem; }
+.read-more { font-size: 0.82rem; }
+.blog-hero .section-title h2 { font-size: 2rem; }
+.blog-hero .section-title .section-subtitle { font-size: 1rem; }
+
+/* Services */
+.detail-content p { font-size: 1rem; }
+.detail-content h4 { font-size: 1.15rem; }
+
+/* Section tags/labels */
+.section-tag, .about-tag, .hero-tag { font-size: 0.78rem; }
+.section-subtitle { font-size: 1rem; }
+
+/* Stats */
+.stat-number { font-size: 2.2rem; }
+.stat-label { font-size: 0.85rem; }
+
+/* Testimonials */
+.testimonial-text { font-size: 1.1rem; }
+.author-info h4 { font-size: 1.05rem; }
+.author-info p { font-size: 0.8rem; }
+
+/* Footer */
+footer p { font-size: 0.9rem; }
+
+/* Breadcrumb */
+.breadcrumb { font-size: 0.88rem; }
+
+/* Service intro */
+.service-intro p { font-size: 1rem; }
